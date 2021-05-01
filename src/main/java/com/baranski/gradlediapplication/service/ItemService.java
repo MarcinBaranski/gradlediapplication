@@ -12,7 +12,7 @@ public class ItemService implements PrinterService {
     @Override
     public void printName() {
         LOG.info("ItemService");
-        LOG.info("============================");
+        //LOG.info("============================");
         //LOG.info();
     }
 }
