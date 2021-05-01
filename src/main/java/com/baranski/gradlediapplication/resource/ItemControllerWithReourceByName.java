@@ -14,11 +14,13 @@ public class ItemControllerWithReourceByName {
 
     public static final Logger LOG = LoggerFactory.getLogger(ItemControllerWithReourceByName.class);
 
-    @Resource(name="itemServicePrinterable")
+    //Injection by @Resource qualifier. We inject component by it's name, but we don't need,second qualifier like
+    //in @Qualifier option. We simply from  @Autowired and @Qualifier("component name") to @Resource(name="component name")
+    @Resource(name = "itemServicePrinterable")
     private PrinterService printerService;
 
     @EventListener
-    public void onApplicationStartup(ApplicationReadyEvent event){
+    public void onApplicationStartup(ApplicationReadyEvent event) {
         LOG.info("Injecting with Resource by name:");
         LOG.info(printerService.getClass().getName());
     }
