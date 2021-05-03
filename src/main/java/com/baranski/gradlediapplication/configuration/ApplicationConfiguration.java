@@ -15,4 +15,9 @@ public class ApplicationConfiguration {
     public NonSpringComponentByName nonSpringComponentByName(){
         return new NonSpringComponentByName("I can still be injected thanks to @Bean via name!");
     }
+
+    @Bean({"firstNonSpringBean","secondNonSpringBean","thirdNonSpringBean"})
+    public NonSpringComponentByMultipleNames nonSpringComponentByMultipleNames(){
+        return new NonSpringComponentByMultipleNames("I can still be injected thanks to @Bean via name multiple!");
+    }
 }
